@@ -21,66 +21,69 @@ const res = {
     {
       name: "Today",
       color: "#fff",
-      description:
-        "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
+      description: "I brought some proper exercise routine for you!",
       image: ImgIntro,
+    },
+    {
+      name: "Stretch and Pull",
+      color: "#fff",
+      description:
+        "Stretch and Pull is a low-impact workout that involves stretching and pulling movements to improve flexibility, strength, and balance.",
+      // "Stretch and Pull is a low-impact workout that involves stretching and pulling movements to improve flexibility, strength, and balance. To perform this exercise, stand with your feet hip-width apart and your arms extended in front of you. Then, reach your arms up and back as far as you can, then pull them back down and repeat the movement for several repetitions.",
+      image: ImageLunge,
+    },
+    {
+      name: "Shoulder Rotation",
+      color: "#fff",
+      description:
+        "Shoulder Rotation is a simple exercise that targets the shoulders and upper back.",
+      // "Shoulder Rotation is a simple exercise that targets the shoulders and upper back. To perform this exercise, stand with your feet shoulder-width apart and your arms at your sides. Then, slowly raise your shoulders up towards your ears, rotate them back, and lower them down. Repeat this movement for several repetitions.",
+      image: ImageOneLetUp,
+    },
+    {
+      name: "Knee Stretch",
+      color: "#fff",
+      description:
+        "Knee Stretch is a simple workout that helps to strengthen the muscles in the legs and improve balance.",
+      // "Knee Stretch is a simple workout that helps to strengthen the muscles in the legs and improve balance. To perform this exercise, stand with your feet shoulder-width apart and your hands on your hips. Then, lift one knee up towards your chest and hold for a few seconds before lowering it back down. Repeat with the other leg for several repetitions.",
+      image: ImageSquat,
     },
     {
       name: "Squats",
       color: "#fff",
       description:
-        "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
+        "Squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
       image: ImageSquat,
     },
     {
-      name: "Squats2",
+      name: "High Knees",
       color: "#fff",
       description:
-        "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
-      image: ImageLunge,
-    },
-    {
-      name: "Squats3",
-      color: "#fff",
-      description:
-        "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
+        "High Knees is a cardiovascular workout that targets the lower body and improves coordination. ",
+      // "High Knees is a cardiovascular workout that targets the lower body and improves coordination. To perform this exercise, stand with your feet hip-width apart and alternate lifting each knee up towards your chest as high as possible while jogging in place. Aim to keep your core engaged and land lightly on the balls of your feet with each step. Repeat for several repetitions.",
       image: ImageOneLetUp,
     },
-    {
-      name: "Squats4",
-      color: "#fff",
-      description:
-        "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
-      image: ImageSquat,
-    },
-    {
-      name: "Squats5",
-      color: "#fff",
-      description:
-        "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
-      image: ImageSquat,
-    },
-    {
-      name: "Squats6",
-      color: "#fff",
-      description:
-        "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
-      image: ImageSquat,
-    },
-    {
-      name: "Squats7",
-      color: "#fff",
-      description:
-        "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
-      image: ImageSquat,
-    },
-    {
-      name: "Squats8",
-      color: "#fff",
-      description:
-        "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
-      image: ImageSquat,
-    },
+    // {
+    //   name: "Squats6",
+    //   color: "#fff",
+    //   description:
+    //     "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
+    //   image: ImageSquat,
+    // },
+    // {
+    //   name: "Squats7",
+    //   color: "#fff",
+    //   description:
+    //     "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
+    //   image: ImageSquat,
+    // },
+    // {
+    //   name: "Squats8",
+    //   color: "#fff",
+    //   description:
+    //     "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
+    //   image: ImageSquat,
+    // },
 
     // "#cb7c7a",
     // " #36a18b",
@@ -190,12 +193,12 @@ export default function CardStackTest() {
                           opacity: opacityCardContent,
                           transform: "scaleX(-1)",
                         }}
-                        className="flex flex-col justify-between items-center h-full w-[80%] mx-auto transform-gpu"
+                        className="flex flex-col justify-between items-center h-full w-[80%] mx-auto transform-gpu overflow-y-scroll"
                       >
-                        <Text className="font-bold text-black text-5xl pt-12">
+                        <Text className="font-bold text-black text-4xl pt-12">
                           {e.name}
                         </Text>
-                        <Text className="font-md text-black text-lg text-justify">
+                        <Text className="font-md text-black text-lg text-justify overflow-y-scroll">
                           {e.description}
                         </Text>
                         <Button
@@ -206,12 +209,20 @@ export default function CardStackTest() {
                             width: "100%",
                           }}
                           onPress={() => {
-                            router.push("/camera");
+                            if (e.name !== "Today") {
+                              router.push(
+                                "/videoInfo?" +
+                                  "name=" +
+                                  e.name.replaceAll(" ", "")
+                              );
+                            }
                           }}
                           className="bottom-12"
                         >
                           <Text className="font-bold text-white text-2xl">
-                            Let&#39;s Do it
+                            {e.name === "Today"
+                              ? "Swipe to start Routine"
+                              : "Start Tutorial"}
                           </Text>
                         </Button>
                       </motion.div>

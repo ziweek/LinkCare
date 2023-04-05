@@ -9,9 +9,9 @@
 <div align="center">
   <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=Flutter&logoColor=white"/>
   <br/>
-  <img src="https://img.shields.io/badge/Google%20Assistant-4285F4?style=flat-square&logo=Google%20Assistant&logoColor=white"/>
   <img src="https://img.shields.io/badge/Mediapipe-4285F4?style=flat-square&logo=Google&logoColor=white"/>
   <img src="https://img.shields.io/badge/TensorFlow-ff6f00?style=flat-square&logo=TensorFlow&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Google%20Assistant-4285F4?style=flat-square&logo=Google%20Assistant&logoColor=white"/>
   <br/>
   <img src="https://img.shields.io/badge/Google%20Cloud-4285F4?style=flat-square&logo=Google%20Cloud&logoColor=white"/>
   <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=Kubernetes&logoColor=white"/>
